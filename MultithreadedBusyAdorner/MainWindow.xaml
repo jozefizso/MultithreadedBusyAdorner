@@ -1,0 +1,28 @@
+﻿<Window x:Class="Abraham.Heidebrecht.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ctrls="clr-namespace:Abraham.Heidebrecht.Controls"
+    Title="Multi-threaded Busy Adorner Sample" Height="300" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        
+       <ToggleButton x:Name="toggle" Content="Show Busy Indicator" />
+        
+        <ctrls:BusyDecorator Grid.Row="1"
+                             IsBusyIndicatorShowing="{Binding IsChecked, ElementName=toggle}">
+            <ListBox>
+                <ListBoxItem Content="Mercury" />
+                <ListBoxItem Content="Venus" />
+                <ListBoxItem Content="Earth" />
+                <ListBoxItem Content="Mars" />
+                <ListBoxItem Content="Jupiter" />
+                <ListBoxItem Content="Saturn" />
+                <ListBoxItem Content="Uranus" />
+                <ListBoxItem Content="Neptune" />
+            </ListBox>
+        </ctrls:BusyDecorator>
+    </Grid>
+</Window>
